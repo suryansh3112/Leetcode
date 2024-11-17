@@ -46,6 +46,8 @@ public class CourseSchedule {
     }
 
     // BFS approach
+    // S=O(V)
+    // T=O(V+E)
     public boolean canFinishbfs(int numCourses, int[][] prerequisites) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         int[] inDegree = new int[numCourses];
