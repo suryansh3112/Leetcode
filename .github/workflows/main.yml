@@ -1,0 +1,22 @@
+name: Log Values on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  log_values:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log messages
+        run: |
+          echo "🚀 GitHub Actions Workflow Triggered!"
+          echo "✅ Running on branch: ${{ github.ref_name }}"
+          echo "🕒 Commit timestamp: $(date)"
+          echo "👤 Commit author: ${{ github.actor }}"
+          echo "🔢 Commit SHA: ${{ github.sha }}"
